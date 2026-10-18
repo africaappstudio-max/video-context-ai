@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Video Context AI: let your AI actually watch videos</title>
-<meta name="description" content="Video Context AI pulls frames and a timestamped transcript from any video, locally, and hands it to Claude Desktop, Cursor or Grok Bot. $49 one-time.">
+<title>Understand This Video For Me AI Plugin: the AI plugin that watches and listens to videos for you</title>
+<meta name="description" content="Understand This Video For Me AI Plugin is the AI plugin that watches and listens to videos for you. It pulls frames and a timestamped transcript from any video, locally, and hands it to Claude Desktop, Cursor or Grok Bot. $49 one-time.">
 <meta name="theme-color" content="#ffffff">
-<meta property="og:title" content="Video Context AI: let your AI actually watch your videos">
+<meta property="og:title" content="Understand This Video For Me AI Plugin: the AI plugin that watches and listens to videos for you">
 <meta property="og:description" content="Frames plus a timestamped transcript of any video, made on your computer, handed to Claude Desktop, Cursor or Grok Bot. $49 one-time.">
 <meta property="og:image" content="https://africaappstudio-max.github.io/video-context-ai/hero.svg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231d1d1f'/><path d='M38 28v44l36-22z' fill='%23fff'/></svg>">
@@ -23,7 +23,8 @@ img{max-width:100%;height:auto;display:block}
 /* nav */
 header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.82);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.06)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
-.logo{font-weight:600;font-size:17px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo{font-weight:600;font-size:17px;text-decoration:none;display:flex;align-items:center;gap:8px;white-space:nowrap;min-width:0}
+.logo i{flex:none}
 .logo i{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--ink)}
 .logo i:after{content:"";border-left:8px solid #fff;border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:2px}
 nav{display:flex;align-items:center;gap:26px}
@@ -92,6 +93,8 @@ footer p{margin:8px 0}
 @media (max-width:760px){
  body{font-size:16px}
  nav a:not(.btn){display:none}
+ .logo{font-size:15px;letter-spacing:-.02em}
+ .lg-full{display:none}
  section{padding:72px 0}
  .hero{padding:56px 0 20px}
  .g3,.g4{grid-template-columns:1fr}
@@ -105,15 +108,15 @@ footer p{margin:8px 0}
 </head>
 <body>
 <header><div class="wrap">
-<a class="logo" href="#top"><i></i>Video Context AI</a>
+<a class="logo" href="#top" aria-label="Understand This Video For Me AI Plugin"><i></i><span>Understand This Video For Me<span class="lg-full"> AI Plugin</span></span></a>
 <nav><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a class="btn sm" href="https://checkout.freemius.com/app/41518/plan/72061/licenses/3/" target="_blank" rel="noopener">Buy</a></nav>
 </div></header>
 
 <main id="top">
 <div class="hero wrap">
-<p class="eyebrow reveal">For Claude Desktop, Cursor and Grok Bot</p>
+<p class="eyebrow reveal">Understand This Video For Me AI Plugin</p>
 <h1 class="reveal">Let your AI actually<br>watch your videos.</h1>
-<p class="lead reveal">AI tools can't really watch videos. They grab a few screenshots and can't hear the audio. Video Context AI pulls enough frames from your video, transcribes every word with timestamps, and hands it all to your AI.</p>
+<p class="lead reveal">AI tools can't really watch videos. They grab a few screenshots and can't hear the audio. This is the AI plugin that watches and listens to videos for you: it pulls enough frames, transcribes every word with timestamps, and hands it all to Claude Desktop, Cursor or Grok Bot.</p>
 <div class="cta reveal">
 <a class="btn" href="https://checkout.freemius.com/app/41518/plan/72061/licenses/3/" target="_blank" rel="noopener">Buy for $49, one-time</a>
 <a class="link" href="#how">See how it works</a>
@@ -159,7 +162,7 @@ footer p{margin:8px 0}
 <section id="pricing" style="padding-top:0"><div class="wrap">
 <div class="sec-head reveal"><h2>Pricing.</h2><p class="lead">One price. Yours for life.</p></div>
 <div class="card price reveal">
-<div class="amt">$49</div><p class="muted" style="margin-top:8px">one-time payment</p>
+<p class="eyebrow" style="color:var(--ink)">Understand This Video For Me AI Plugin</p><div class="amt">$49</div><p class="muted" style="margin-top:8px">one-time payment</p>
 <ul><li>Lifetime licence</li><li>Claude Desktop, Cursor and Grok Bot</li><li>Local processing: your videos stay on your computer</li><li>30-day money-back guarantee</li></ul>
 <div><a class="btn" href="https://checkout.freemius.com/app/41518/plan/72061/licenses/3/" target="_blank" rel="noopener">Buy now</a></div>
 <p class="small" style="margin:16px 0 0">Secure checkout by Freemius</p>
@@ -168,6 +171,7 @@ footer p{margin:8px 0}
 <section id="faq" style="padding-top:0"><div class="wrap narrow">
 <div class="sec-head reveal"><h2>Questions.</h2></div>
 <div class="reveal">
+<details><summary>What is Understand This Video For Me AI Plugin?</summary><p>It's the AI plugin that watches and listens to videos for you. It gives Claude Desktop, Cursor or Grok Bot the key frames and a timestamped transcript of any video on your computer, so your AI can explain it, summarise it and answer questions about it.</p></details>
 <details><summary>Are my videos uploaded anywhere?</summary><p>No. Frames and transcripts are created locally on your computer. We never receive your videos.</p></details>
 <details><summary>Is it a subscription?</summary><p>No. You pay $49 once and keep your licence for life.</p></details>
 <details><summary>What do I need?</summary><p>A computer running Claude Desktop, Cursor or Grok Bot.</p></details>
@@ -179,6 +183,7 @@ footer p{margin:8px 0}
 <section id="terms" class="legal"><div class="wrap narrow">
 <h2>Terms of Service</h2>
 <ul>
+<li>These terms cover Understand This Video For Me AI Plugin (the "software"), sold by Africa App Studio.</li>
 <li>Each licence is for one user. You may install it on your own devices, up to the number of activations included in your plan.</li>
 <li>You may not resell, share, redistribute or sublicense the software or your licence key.</li>
 <li>The software is provided "as is", without warranties of any kind. To the extent permitted by law, Africa App Studio is not liable for any indirect or consequential damages arising from its use.</li>
@@ -189,7 +194,7 @@ footer p{margin:8px 0}
 <section id="privacy" class="legal"><div class="wrap narrow">
 <h2>Privacy Policy</h2>
 <ul>
-<li>Your videos are processed locally on your computer. We never upload, receive or store them.</li>
+<li>Understand This Video For Me AI Plugin processes your videos locally on your computer. We never upload, receive or store them.</li>
 <li>Licence checks send only your licence key and an instance ID to Freemius to confirm your licence is valid.</li>
 <li>When you buy, Freemius processes your name, email and payment details to complete the purchase and send your licence. We use your email only for licence and support matters.</li>
 <li>We do not sell your data. For questions or data requests (access, correction, deletion), email <a href="mailto:africa.app.studio@gmail.com">africa.app.studio@gmail.com</a>.</li>
@@ -197,14 +202,14 @@ footer p{margin:8px 0}
 
 <section id="refund" class="legal"><div class="wrap narrow">
 <h2>Refund Policy</h2>
-<p>We offer a 30-day, no-questions-asked money-back guarantee. To request a refund, email <a href="mailto:africa.app.studio@gmail.com">africa.app.studio@gmail.com</a> within 30 days of purchase with your order email. Your licence will be deactivated after the refund.</p>
+<p>Understand This Video For Me AI Plugin comes with a 30-day, no-questions-asked money-back guarantee. To request a refund, email <a href="mailto:africa.app.studio@gmail.com">africa.app.studio@gmail.com</a> within 30 days of purchase with your order email. Your licence will be deactivated after the refund.</p>
 </div></section>
 </main>
 
 <footer><div class="wrap">
 <p><a href="#terms">Terms</a><a href="#privacy">Privacy</a><a href="#refund">Refund</a><a href="mailto:africa.app.studio@gmail.com">Contact</a></p>
 <p>Seller: Africa App Studio (Henry Ngonzi), Kampala, Uganda · africa.app.studio@gmail.com</p>
-<p>© 2026 Africa App Studio</p>
+<p>© 2026 Africa App Studio · Understand This Video For Me AI Plugin</p>
 </div></footer>
 <script>
 (function(){var els=document.querySelectorAll('.reveal');
