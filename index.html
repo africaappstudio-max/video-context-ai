@@ -107,6 +107,18 @@ footer p{margin:8px 0}
 .hv video{width:100%;height:auto;display:block}
 .ht{display:none!important}
 @media (max-width:760px){.hw{display:none!important}.ht{display:block!important;max-width:420px;margin:0 auto}}
+/* works with */
+.also{text-align:center;margin:40px 0 0}
+.also p{margin:0 0 14px;color:var(--grey);font-size:17px}
+.chips{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.chips li{background:var(--card);border-radius:980px;padding:8px 18px;font-size:15px;font-weight:500;color:var(--ink)}
+.soon{margin:40px auto 0;max-width:820px;border:1px solid var(--line);border-radius:22px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.soon h3{margin:0 0 6px}
+.soon p{margin:0;color:var(--grey);font-size:16px}
+.soon .tag{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#1f3a68;margin:0 0 6px}
+.btn.alt{background:#fff;color:var(--ink);border:1px solid var(--ink);flex:none}
+.btn.alt:hover{background:var(--ink);color:#fff}
+.price .policy{color:var(--ink);font-size:15px;line-height:1.45;margin:22px auto 0;padding-top:20px;border-top:1px solid var(--line);max-width:400px}
 /* responsive */
 @media (max-width:900px){.g4{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:760px){
@@ -121,6 +133,7 @@ footer p{margin:8px 0}
  .panel{border-radius:22px;margin-top:40px}
  .hero .panel img{max-width:400px;margin:0 auto}
  .amt{font-size:64px}
+ .soon{flex-direction:column;align-items:flex-start;padding:24px}
  .sec-head{margin-bottom:36px}
 }
 </style>
@@ -141,7 +154,7 @@ footer p{margin:8px 0}
 <a class="btn" href="https://checkout.freemius.com/app/41518/plan/72061/licenses/3/" target="_blank" rel="noopener">Buy for $49, one-time</a>
 <a class="link" href="#how">See how it works</a>
 </div>
-<p class="small reveal">Lifetime licence · 14-day money-back guarantee</p>
+<p class="small reveal">Lifetime licence · No refunds for change of mind</p>
 
 </div>
 
@@ -179,7 +192,12 @@ footer p{margin:8px 0}
 <div class="card reveal"><h3>Claude Desktop</h3><p>Ask Claude about any video file on your computer.</p></div>
 <div class="card reveal"><h3>Cursor</h3><p>Turn screen recordings and tutorials into context for coding.</p></div>
 <div class="card reveal"><h3>Grok Bot</h3><p>Give Grok Bot the full picture: visuals and every spoken word.</p></div>
-</div></div></section>
+</div>
+<div class="also reveal"><p>Also works with any app that supports MCP plugins:</p>
+<ul class="chips"><li>Windsurf</li><li>VS Code (Copilot)</li><li>Claude Code</li><li>Zed</li><li>LM Studio</li><li>Cline</li></ul></div>
+<div class="soon reveal"><div><p class="tag">Coming soon</p><h3>In your browser</h3><p>ChatGPT, Claude and Grok on the web. Get notified when it's ready.</p></div>
+<a class="btn alt" href="mailto:africa.app.studio@gmail.com?subject=Notify%20me%3A%20browser%20extension&amp;body=Please%20email%20me%20when%20the%20browser%20extension%20is%20ready.">Notify me</a></div>
+</div></section>
 
 <section style="padding-top:0"><div class="wrap">
 <div class="sec-head reveal"><h2>Who it's for.</h2></div>
@@ -194,9 +212,11 @@ footer p{margin:8px 0}
 <div class="sec-head reveal"><h2>Pricing.</h2><p class="lead">One price. Yours for life.</p></div>
 <div class="card price reveal">
 <p class="eyebrow" style="color:var(--ink)">Understand This Video For Me AI Plugin</p><div class="amt">$49</div><p class="muted" style="margin-top:8px">one-time payment</p>
-<ul><li>Lifetime licence</li><li>Claude Desktop, Cursor and Grok Bot</li><li>Local processing: your videos stay on your computer</li><li>14-day money-back guarantee</li></ul>
+<ul><li>Lifetime licence</li><li>Claude Desktop, Cursor, Grok Bot and more</li><li>Local processing: your videos stay on your computer</li><li>Pay once. No subscription</li></ul>
 <div><a class="btn" href="https://checkout.freemius.com/app/41518/plan/72061/licenses/3/" target="_blank" rel="noopener">Buy now</a></div>
 <p class="small" style="margin:16px 0 0">Secure checkout by Freemius</p>
+<p class="policy">No refunds for change of mind. If it won't work on your computer, email me within 7 days and I'll fix it or refund you.</p>
+<p class="small" style="margin:8px auto 0;max-width:400px">The charge shows as FREEMIUS on your bank statement. Any problem, email first.</p>
 </div></div></section>
 
 <section id="faq" style="padding-top:0"><div class="wrap narrow">
@@ -205,8 +225,8 @@ footer p{margin:8px 0}
 <details><summary>What is Understand This Video For Me AI Plugin?</summary><p>It's the AI plugin that watches and listens to videos for you. It gives Claude Desktop, Cursor or Grok Bot the key frames and a timestamped transcript of any video on your computer, so your AI can explain it, summarise it and answer questions about it.</p></details>
 <details><summary>Are my videos uploaded anywhere?</summary><p>No. Frames and transcripts are created locally on your computer. We never receive your videos.</p></details>
 <details><summary>Is it a subscription?</summary><p>No. You pay $49 once and keep your licence for life.</p></details>
-<details><summary>What do I need?</summary><p>A computer running Claude Desktop, Cursor or Grok Bot.</p></details>
-<details><summary>What if it doesn't work for me?</summary><p>Email us within 14 days. If it doesn't work for you and we can't fix it together, we'll refund you in full within 24 hours.</p></details>
+<details><summary>What do I need?</summary><p>A computer running Claude Desktop, Cursor, Grok Bot or another app that supports MCP plugins. A browser version for ChatGPT, Claude and Grok on the web is coming soon.</p></details>
+<details><summary>Can I get a refund?</summary><p>No refunds for change of mind. Please watch the demo before you buy, so you know exactly what you get.</p><p>You get a refund only if all three are true: it won't install or run on your computer, you email <a href="mailto:africa.app.studio@gmail.com">africa.app.studio@gmail.com</a> within 7 days of buying, and I can't fix it within 48 hours. When you're refunded, your licence is switched off.</p><p>No refunds for "I changed my mind", "I didn't like it" or "I didn't need it".</p><p>The charge shows as FREEMIUS on your bank statement. Any problem, email first.</p></details>
 <details><summary>How do I get help?</summary><p>Email <a href="mailto:africa.app.studio@gmail.com">africa.app.studio@gmail.com</a>.</p></details>
 </div>
 </div></section>
@@ -233,7 +253,13 @@ footer p{margin:8px 0}
 
 <section id="refund" class="legal"><div class="wrap narrow">
 <h2>Refund Policy</h2>
-<p>Understand This Video For Me AI Plugin comes with a 14-day money-back guarantee. If it doesn't work for you and we can't fix it together, email <a href="mailto:africa.app.studio@gmail.com">africa.app.studio@gmail.com</a> within 14 days of purchase with your order email and we'll refund you in full within 24 hours. Refunding deactivates your licence key. Payments are processed by Freemius, so the charge appears on your statement from Freemius. Please contact us before opening a dispute with your bank; we answer every email.</p>
+<p>No refunds for change of mind. If it won't work on your computer, email me within 7 days and I'll fix it or refund you.</p>
+<ul>
+<li>You get a refund only if: it won't install or run on your computer, you email <a href="mailto:africa.app.studio@gmail.com">africa.app.studio@gmail.com</a> within 7 days of buying (with your order email), and it can't be fixed within 48 hours.</li>
+<li>When you're refunded, your licence key is switched off.</li>
+<li>No refunds for "I changed my mind", "I didn't like it" or "I didn't need it". Please watch the demo before you buy.</li>
+<li>Payments are processed by Freemius. The charge shows as FREEMIUS on your bank statement. Any problem, email first; we answer every email.</li>
+</ul>
 </div></section>
 </main>
 
