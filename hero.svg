@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="A video becomes a strip of frames and a timestamped transcript, which goes into an AI chat">
+<defs>
+<filter id="sh" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000" flood-opacity=".08"/></filter>
+<linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8eef7"/><stop offset="1" stop-color="#d9e2ee"/></linearGradient>
+<marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#86868b"/></marker>
+<g id="scene">
+<rect width="100" height="60" rx="6" fill="url(#sky)"/>
+<rect x="8" y="9" width="50" height="34" rx="3" fill="#fff"/>
+<rect x="13" y="15" width="30" height="4" rx="2" fill="#c7ccd4"/>
+<rect x="13" y="23" width="38" height="4" rx="2" fill="#e1e4e8"/>
+<rect x="13" y="31" width="22" height="4" rx="2" fill="#e1e4e8"/>
+<circle cx="78" cy="30" r="12" fill="#c9d2df"/><rect x="66" y="44" width="24" height="16" rx="8" fill="#c9d2df"/>
+</g>
+</defs>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif}</style>
+
+<!-- Video player -->
+<g filter="url(#sh)"><rect x="30" y="150" width="330" height="270" rx="22" fill="#fff"/></g>
+<g transform="translate(50 170) scale(2.9)"><use href="#scene"/></g>
+<circle cx="195" cy="257" r="30" fill="#1d1d1f" fill-opacity=".78"/><path d="M185 241v32l27-16z" fill="#fff"/>
+<rect x="50" y="366" width="290" height="5" rx="2.5" fill="#e5e5ea"/><rect x="50" y="366" width="118" height="5" rx="2.5" fill="#1d1d1f"/><circle cx="168" cy="368.5" r="7" fill="#1d1d1f"/>
+<text x="50" y="402" font-size="16" fill="#1d1d1f" font-weight="600">tutorial.mp4</text>
+<text x="340" y="402" font-size="15" fill="#86868b" text-anchor="end">4:12</text>
+
+<path d="M372 285h40" stroke="#86868b" stroke-width="2.5" fill="none" marker-end="url(#ar)"/>
+
+<!-- Frames + transcript -->
+<g filter="url(#sh)"><rect x="425" y="70" width="350" height="460" rx="22" fill="#fff"/></g>
+<text x="447" y="108" font-size="13" fill="#86868b" font-weight="600" letter-spacing="1">FRAMES</text>
+<g transform="translate(447 122)">
+<g><use href="#scene" transform="scale(.74)"/></g>
+<g transform="translate(80 0)"><use href="#scene" transform="scale(.74)"/><rect x="6" y="18" width="30" height="5" rx="2" fill="#0071e3" fill-opacity=".35"/></g>
+<g transform="translate(160 0)"><use href="#scene" transform="scale(.74)"/><rect x="6" y="24" width="38" height="5" rx="2" fill="#0071e3" fill-opacity=".35"/></g>
+<g transform="translate(240 0)"><use href="#scene" transform="scale(.74)"/><rect x="6" y="9" width="40" height="28" rx="2" fill="#0071e3" fill-opacity=".18"/></g>
+</g>
+<g font-size="12" fill="#86868b"><text x="447" y="182">0:00</text><text x="527" y="182">0:48</text><text x="607" y="182">1:24</text><text x="687" y="182">2:56</text></g>
+<line x1="447" y1="206" x2="753" y2="206" stroke="#e5e5ea"/>
+<text x="447" y="238" font-size="13" fill="#86868b" font-weight="600" letter-spacing="1">TRANSCRIPT</text>
+<g font-size="15">
+<text x="447" y="272"><tspan fill="#86868b" font-variant-numeric="tabular-nums">0:00</tspan><tspan x="497" fill="#1d1d1f">Hi, today I'll show you how to</tspan></text>
+<text x="497" y="294" fill="#1d1d1f">set up the new dashboard.</text>
+<text x="447" y="330"><tspan fill="#86868b">0:48</tspan><tspan x="497" fill="#1d1d1f">First, open Settings and</tspan></text>
+<text x="497" y="352" fill="#1d1d1f">turn on Advanced mode.</text>
+<text x="447" y="388"><tspan fill="#86868b">1:24</tspan><tspan x="497" fill="#1d1d1f">Now paste your API key here</tspan></text>
+<text x="497" y="410" fill="#1d1d1f">and click Save.</text>
+<text x="447" y="446"><tspan fill="#86868b">2:56</tspan><tspan x="497" fill="#1d1d1f">That's it. Your data is now</tspan></text>
+<text x="497" y="468" fill="#1d1d1f">syncing every five minutes.</text>
+</g>
+<rect x="447" y="494" width="186" height="24" rx="12" fill="#f5f5f7"/>
+<text x="540" y="511" font-size="12" fill="#6e6e73" text-anchor="middle">Processed on your computer</text>
+
+<path d="M787 285h40" stroke="#86868b" stroke-width="2.5" fill="none" marker-end="url(#ar)"/>
+
+<!-- AI chat -->
+<g filter="url(#sh)"><rect x="840" y="110" width="330" height="380" rx="22" fill="#fff"/></g>
+<text x="862" y="148" font-size="16" fill="#1d1d1f" font-weight="600">Your AI</text>
+<text x="1148" y="148" font-size="12" fill="#86868b" text-anchor="end">Claude · Cursor · Grok Bot</text>
+<line x1="862" y1="164" x2="1148" y2="164" stroke="#e5e5ea"/>
+<rect x="938" y="184" width="210" height="62" rx="18" fill="#1d1d1f"/>
+<text x="956" y="210" font-size="14" fill="#fff">What do I do at 1:24</text>
+<text x="956" y="231" font-size="14" fill="#fff">in this video?</text>
+<rect x="862" y="262" width="262" height="134" rx="18" fill="#f5f5f7"/>
+<g font-size="14" fill="#1d1d1f">
+<text x="880" y="290">At 1:24 you paste your API key</text>
+<text x="880" y="311">into the field on the Settings</text>
+<text x="880" y="332">page and click Save. The frame</text>
+<text x="880" y="353">shows the key field highlighted</text>
+<text x="880" y="374">right under Advanced mode.</text>
+</g>
+<rect x="862" y="428" width="286" height="40" rx="20" fill="#fff" stroke="#d2d2d7"/>
+<text x="882" y="453" font-size="14" fill="#86868b">Ask about the video…</text>
+</svg>

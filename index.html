@@ -5,84 +5,178 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Video Context AI: let your AI actually watch videos</title>
 <meta name="description" content="Video Context AI pulls frames and a timestamped transcript from any video, locally, and hands it to Claude Desktop, Cursor or Grok Bot. $49 one-time.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Video Context AI: let your AI actually watch your videos">
+<meta property="og:description" content="Frames plus a timestamped transcript of any video, made on your computer, handed to Claude Desktop, Cursor or Grok Bot. $49 one-time.">
+<meta property="og:image" content="https://africaappstudio-max.github.io/video-context-ai/hero.svg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231d1d1f'/><path d='M38 28v44l36-22z' fill='%23fff'/></svg>">
+<script>document.documentElement.classList.add('js')</script>
 <style>
-:root{--bg:#0f1115;--card:#171a21;--txt:#e8eaf0;--mut:#9aa3b2;--acc:#ffb547;--line:#262b36}
-*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--txt)}
-a{color:var(--acc)}.wrap{max-width:960px;margin:0 auto;padding:0 20px}
-header{padding:18px 0;border-bottom:1px solid var(--line)}header .wrap{display:flex;justify-content:space-between;align-items:center}
-.logo{font-weight:800}nav a{color:var(--mut);text-decoration:none;margin-left:16px;font-size:15px}
-.hero{padding:72px 0 48px;text-align:center}h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;margin:0 0 16px}
-.hero p{color:var(--mut);font-size:1.15rem;max-width:640px;margin:0 auto 28px}
-.btn{display:inline-block;background:var(--acc);color:#111;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none}
-.small{color:var(--mut);font-size:14px;margin-top:10px}
-section{padding:48px 0;border-top:1px solid var(--line)}h2{font-size:1.7rem;margin:0 0 20px}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}.card h3{margin:0 0 6px;font-size:1.05rem}.card p{margin:0;color:var(--mut)}
-.num{color:var(--acc);font-weight:800}
-.price{max-width:420px;margin:0 auto;text-align:center}.price .amt{font-size:3rem;font-weight:800}
-.price ul{list-style:none;padding:0;color:var(--mut)}
-details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:10px}summary{cursor:pointer;font-weight:600}details p{color:var(--mut);margin:10px 0 0}
-.legal p,.legal li{color:var(--mut)}
-footer{padding:28px 0;border-top:1px solid var(--line);color:var(--mut);font-size:14px}footer a{margin-right:14px}
+:root{--ink:#1d1d1f;--grey:#6e6e73;--light:#86868b;--card:#f5f5f7;--line:#d2d2d7;--blue:#0071e3;--blueh:#0077ed}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--ink);font:17px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
+a{color:var(--ink)}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.narrow{max-width:760px}
+/* nav */
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.82);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.06)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-weight:600;font-size:17px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo i{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--ink)}
+.logo i:after{content:"";border-left:8px solid #fff;border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:2px}
+nav{display:flex;align-items:center;gap:26px}
+nav a{color:var(--grey);text-decoration:none;font-size:14px}
+nav a:hover{color:var(--ink)}
+/* buttons */
+.btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:500;font-size:17px;padding:12px 24px;border-radius:980px;transition:background .2s}
+.btn:hover{background:var(--blueh)}
+.btn.sm{font-size:14px;padding:7px 15px}
+.link{color:var(--ink);text-decoration:none;font-size:17px}
+.link:after{content:" ›"}
+.link:hover{text-decoration:underline}
+/* type */
+h1{font-size:clamp(40px,7vw,80px);line-height:1.04;letter-spacing:-.035em;font-weight:700;margin:0 0 20px}
+h2{font-size:clamp(32px,5vw,56px);line-height:1.07;letter-spacing:-.03em;font-weight:700;margin:0 0 14px}
+h3{font-size:21px;line-height:1.25;letter-spacing:-.02em;font-weight:600;margin:0 0 8px}
+.eyebrow{color:var(--grey);font-size:17px;font-weight:600;margin:0 0 12px}
+.lead{color:var(--grey);font-size:clamp(19px,2.2vw,24px);line-height:1.4;max-width:720px;margin:0 auto}
+.muted{color:var(--grey)}
+.small{color:var(--light);font-size:14px}
+.center{text-align:center}
+/* sections */
+section{padding:110px 0}
+.hero{padding:90px 0 40px;text-align:center}
+.hero .cta{display:flex;gap:26px;justify-content:center;align-items:center;flex-wrap:wrap;margin:34px 0 14px}
+.panel{background:var(--card);border-radius:30px;padding:clamp(18px,4vw,48px);margin-top:56px}
+.sec-head{text-align:center;margin-bottom:56px}
+.grid{display:grid;gap:20px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border-radius:22px;padding:30px}
+.card p{margin:0;color:var(--grey);font-size:16px}
+.step .ico{height:96px;margin:0 0 22px;border-radius:16px;background:#fff;display:grid;place-items:center}
+.step .n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font-size:14px;font-weight:600;margin-bottom:14px}
+.anim{max-width:720px;margin:0 auto;border-radius:22px;overflow:hidden;background:#fff}
+.note{text-align:center;margin-top:26px}
+/* pricing */
+.price{max-width:520px;margin:0 auto;text-align:center;padding:48px 34px}
+.amt{font-size:80px;font-weight:700;letter-spacing:-.04em;line-height:1}
+.price ul{list-style:none;padding:0;margin:28px 0 32px;text-align:left;display:inline-block}
+.price li{padding:7px 0 7px 30px;position:relative;color:var(--ink)}
+.price li:before{content:"";position:absolute;left:4px;top:13px;width:12px;height:7px;border-left:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(-45deg)}
+/* faq */
+details{border-bottom:1px solid var(--line);padding:22px 0}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{cursor:pointer;font-weight:600;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--light);font-weight:400;font-size:24px;line-height:1}
+details[open] summary:after{content:"−"}
+details p{color:var(--grey);margin:12px 0 0}
+/* legal */
+.legal{padding:70px 0;border-top:1px solid #e8e8ed}
+.legal h2{font-size:28px;letter-spacing:-.02em}
+.legal p,.legal li{color:var(--grey);font-size:15px}
+.legal li{margin-bottom:8px}
+footer{background:var(--card);color:var(--grey);font-size:12px;padding:30px 0}
+footer a{color:var(--grey);margin-right:18px;text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer p{margin:8px 0}
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+/* responsive */
+@media (max-width:900px){.g4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:760px){
+ body{font-size:16px}
+ nav a:not(.btn){display:none}
+ section{padding:72px 0}
+ .hero{padding:56px 0 20px}
+ .g3,.g4{grid-template-columns:1fr}
+ .card{padding:24px}
+ .panel{border-radius:22px;margin-top:40px}
+ .hero .panel img{max-width:400px;margin:0 auto}
+ .amt{font-size:64px}
+ .sec-head{margin-bottom:36px}
+}
 </style>
 </head>
 <body>
-<header><div class="wrap"><span class="logo">🎬 Video Context AI</span>
-<nav><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav></div></header>
+<header><div class="wrap">
+<a class="logo" href="#top"><i></i>Video Context AI</a>
+<nav><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a class="btn sm" href="https://checkout.freemius.com/app/41518/plan/72061/licenses/3/" target="_blank" rel="noopener">Buy</a></nav>
+</div></header>
 
-<main>
+<main id="top">
 <div class="hero wrap">
-<h1>Let your AI actually watch your videos</h1>
-<p>AI tools can't really watch videos. They grab a few screenshots and can't hear the audio. Video Context AI pulls enough frames from your video, transcribes every word with timestamps, and hands it all to your AI.</p>
+<p class="eyebrow reveal">For Claude Desktop, Cursor and Grok Bot</p>
+<h1 class="reveal">Let your AI actually<br>watch your videos.</h1>
+<p class="lead reveal">AI tools can't really watch videos. They grab a few screenshots and can't hear the audio. Video Context AI pulls enough frames from your video, transcribes every word with timestamps, and hands it all to your AI.</p>
+<div class="cta reveal">
 <a class="btn" href="https://checkout.freemius.com/app/41518/plan/72061/licenses/3/" target="_blank" rel="noopener">Buy for $49, one-time</a>
-<div class="small">Lifetime licence · 30-day money-back guarantee</div>
+<a class="link" href="#how">See how it works</a>
+</div>
+<p class="small reveal">Lifetime licence · 30-day money-back guarantee</p>
+<div class="panel reveal"><picture><source media="(max-width:760px)" srcset="hero-mobile.svg" width="420" height="1290"><img src="hero.svg" width="1200" height="600" alt="A video file becomes a strip of frames and a timestamped transcript, which your AI uses to answer questions about the video"></picture></div>
 </div>
 
-<section><div class="wrap">
-<h2>Works with</h2>
-<div class="grid">
-<div class="card"><h3>Claude Desktop</h3><p>Ask Claude about any video file on your computer.</p></div>
-<div class="card"><h3>Cursor</h3><p>Turn screen recordings and tutorials into context for coding.</p></div>
-<div class="card"><h3>Grok Bot</h3><p>Give Grok Bot the full picture: visuals and every spoken word.</p></div>
-</div></div></section>
-
-<section><div class="wrap">
-<h2>Who it's for</h2>
-<div class="grid">
-<div class="card"><h3>Creators</h3><p>Summarise, repurpose and get feedback on your videos.</p></div>
-<div class="card"><h3>Marketers</h3><p>Break down ads, webinars and competitor videos.</p></div>
-<div class="card"><h3>Developers</h3><p>Feed bug recordings and video tutorials to your AI.</p></div>
-<div class="card"><h3>AI power users</h3><p>Stop taking screenshots and transcribing by hand.</p></div>
-</div></div></section>
-
 <section id="how"><div class="wrap">
-<h2>How it works</h2>
-<div class="grid">
-<div class="card"><p class="num">1</p><h3>Install the plugin</h3><p>Download, install and enter your licence key.</p></div>
-<div class="card"><p class="num">2</p><h3>Point it at a video</h3><p>Just ask your AI about a video file.</p></div>
-<div class="card"><p class="num">3</p><h3>It runs locally</h3><p>ffmpeg pulls the key frames; faster-whisper writes a timestamped transcript, all on your computer.</p></div>
-<div class="card"><p class="num">4</p><h3>Your AI understands</h3><p>Frames plus transcript go to your AI, so it can explain, summarise and answer questions.</p></div>
+<div class="sec-head reveal"><h2>How it works.</h2><p class="lead">Three steps. Everything happens on your computer.</p></div>
+<div class="grid g3">
+<div class="card step reveal">
+<div class="ico"><svg width="120" height="72" viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="20" width="100" height="48" rx="10" fill="none" stroke="#c7c7cc" stroke-width="2" stroke-dasharray="5 5"/><rect x="40" y="4" width="40" height="44" rx="6" fill="#fff" stroke="#d2d2d7"/><rect x="45" y="9" width="30" height="20" rx="3" fill="#e2e9f3"/><path d="M57 14v10l8-5z" fill="#fff"/><rect x="47" y="34" width="26" height="3" rx="1.5" fill="#1d1d1f"/><rect x="51" y="40" width="18" height="3" rx="1.5" fill="#c7c7cc"/><path d="M60 52v10m-5-5 5 5 5-5" stroke="#1d1d1f" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+<span class="n">1</span><h3>Drop in a video</h3><p>Point your AI at any video file on your computer: a tutorial, a screen recording, an ad, a webinar.</p></div>
+<div class="card step reveal">
+<div class="ico"><svg width="150" height="72" viewBox="0 0 150 72" aria-hidden="true"><g fill="#e2e9f3"><rect x="8" y="8" width="30" height="20" rx="3"/><rect x="43" y="8" width="30" height="20" rx="3"/><rect x="78" y="8" width="30" height="20" rx="3"/><rect x="113" y="8" width="30" height="20" rx="3"/></g><g fill="#86868b" font-size="7" font-family="-apple-system,Inter,sans-serif"><text x="8" y="47">0:00</text><text x="8" y="61">0:48</text></g><rect x="30" y="41" width="80" height="4" rx="2" fill="#1d1d1f"/><rect x="30" y="55" width="104" height="4" rx="2" fill="#1d1d1f"/></svg></div>
+<span class="n">2</span><h3>Frames and every word</h3><p>ffmpeg pulls the key frames and faster-whisper transcribes every word with timestamps, all on your computer. Nothing is uploaded.</p></div>
+<div class="card step reveal">
+<div class="ico"><svg width="130" height="72" viewBox="0 0 130 72" aria-hidden="true"><rect x="52" y="6" width="70" height="22" rx="11" fill="#1d1d1f"/><rect x="62" y="15" width="44" height="4" rx="2" fill="#fff"/><rect x="8" y="36" width="88" height="30" rx="12" fill="#f5f5f7"/><rect x="18" y="45" width="64" height="4" rx="2" fill="#86868b"/><rect x="18" y="54" width="44" height="4" rx="2" fill="#86868b"/></svg></div>
+<span class="n">3</span><h3>Your AI understands it</h3><p>Claude Desktop, Cursor or Grok Bot now actually understands the video, so it can explain, summarise and answer questions.</p></div>
+</div>
+<div class="panel reveal"><div class="anim"><img src="how.webp" width="720" height="450" loading="lazy" alt="Animation: a video file is dropped in, frames and a timestamped transcript appear, then the AI answers a question about the video"></div></div>
+<p class="note small reveal">Setup is quick: download, install the plugin and enter your licence key once.</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<div class="sec-head reveal"><h2>Works with your AI.</h2></div>
+<div class="grid g3">
+<div class="card reveal"><h3>Claude Desktop</h3><p>Ask Claude about any video file on your computer.</p></div>
+<div class="card reveal"><h3>Cursor</h3><p>Turn screen recordings and tutorials into context for coding.</p></div>
+<div class="card reveal"><h3>Grok Bot</h3><p>Give Grok Bot the full picture: visuals and every spoken word.</p></div>
 </div></div></section>
 
-<section id="pricing"><div class="wrap price">
-<h2>Pricing</h2>
-<div class="card">
-<div class="amt">$49</div><p>one-time payment</p>
-<ul><li>✔ Lifetime licence</li><li>✔ Claude Desktop, Cursor and Grok Bot</li><li>✔ Local processing: your videos stay on your computer</li><li>✔ 30-day money-back guarantee</li></ul>
-<a class="btn" href="https://checkout.freemius.com/app/41518/plan/72061/licenses/3/" target="_blank" rel="noopener">Buy now</a>
-<p class="small">Secure checkout by Freemius</p>
+<section style="padding-top:0"><div class="wrap">
+<div class="sec-head reveal"><h2>Who it's for.</h2></div>
+<div class="grid g4">
+<div class="card reveal"><h3>Creators</h3><p>Summarise, repurpose and get feedback on your videos.</p></div>
+<div class="card reveal"><h3>Marketers</h3><p>Break down ads, webinars and competitor videos.</p></div>
+<div class="card reveal"><h3>Developers</h3><p>Feed bug recordings and video tutorials to your AI.</p></div>
+<div class="card reveal"><h3>AI power users</h3><p>Stop taking screenshots and transcribing by hand.</p></div>
 </div></div></section>
 
-<section id="faq"><div class="wrap">
-<h2>FAQ</h2>
+<section id="pricing" style="padding-top:0"><div class="wrap">
+<div class="sec-head reveal"><h2>Pricing.</h2><p class="lead">One price. Yours for life.</p></div>
+<div class="card price reveal">
+<div class="amt">$49</div><p class="muted" style="margin-top:8px">one-time payment</p>
+<ul><li>Lifetime licence</li><li>Claude Desktop, Cursor and Grok Bot</li><li>Local processing: your videos stay on your computer</li><li>30-day money-back guarantee</li></ul>
+<div><a class="btn" href="https://checkout.freemius.com/app/41518/plan/72061/licenses/3/" target="_blank" rel="noopener">Buy now</a></div>
+<p class="small" style="margin:16px 0 0">Secure checkout by Freemius</p>
+</div></div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap narrow">
+<div class="sec-head reveal"><h2>Questions.</h2></div>
+<div class="reveal">
 <details><summary>Are my videos uploaded anywhere?</summary><p>No. Frames and transcripts are created locally on your computer. We never receive your videos.</p></details>
 <details><summary>Is it a subscription?</summary><p>No. You pay $49 once and keep your licence for life.</p></details>
 <details><summary>What do I need?</summary><p>A computer running Claude Desktop, Cursor or Grok Bot.</p></details>
 <details><summary>What if it doesn't work for me?</summary><p>Email us within 30 days and we'll refund you in full, no questions asked.</p></details>
 <details><summary>How do I get help?</summary><p>Email <a href="mailto:africa.app.studio@gmail.com">africa.app.studio@gmail.com</a>.</p></details>
+</div>
 </div></section>
 
-<section id="terms" class="legal"><div class="wrap">
+<section id="terms" class="legal"><div class="wrap narrow">
 <h2>Terms of Service</h2>
 <ul>
 <li>Each licence is for one user. You may install it on your own devices, up to the number of activations included in your plan.</li>
@@ -92,7 +186,7 @@ footer{padding:28px 0;border-top:1px solid var(--line);color:var(--mut);font-siz
 <li>We may update these terms. Material changes will be posted on this page.</li>
 </ul></div></section>
 
-<section id="privacy" class="legal"><div class="wrap">
+<section id="privacy" class="legal"><div class="wrap narrow">
 <h2>Privacy Policy</h2>
 <ul>
 <li>Your videos are processed locally on your computer. We never upload, receive or store them.</li>
@@ -101,7 +195,7 @@ footer{padding:28px 0;border-top:1px solid var(--line);color:var(--mut);font-siz
 <li>We do not sell your data. For questions or data requests (access, correction, deletion), email <a href="mailto:africa.app.studio@gmail.com">africa.app.studio@gmail.com</a>.</li>
 </ul></div></section>
 
-<section id="refund" class="legal"><div class="wrap">
+<section id="refund" class="legal"><div class="wrap narrow">
 <h2>Refund Policy</h2>
 <p>We offer a 30-day, no-questions-asked money-back guarantee. To request a refund, email <a href="mailto:africa.app.studio@gmail.com">africa.app.studio@gmail.com</a> within 30 days of purchase with your order email. Your licence will be deactivated after the refund.</p>
 </div></section>
@@ -112,5 +206,11 @@ footer{padding:28px 0;border-top:1px solid var(--line);color:var(--mut);font-siz
 <p>Seller: Africa App Studio (Henry Ngonzi), Kampala, Uganda · africa.app.studio@gmail.com</p>
 <p>© 2026 Africa App Studio</p>
 </div></footer>
+<script>
+(function(){var els=document.querySelectorAll('.reveal');
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+els.forEach(function(e){io.observe(e)});})();
+</script>
 </body>
 </html>
