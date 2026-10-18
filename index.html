@@ -103,6 +103,10 @@ footer p{margin:8px 0}
 .credit{color:var(--light);font-size:12px;text-align:center;margin:18px 0 0}
 .credit a{color:var(--light)}
 @media (max-width:760px){.g2{grid-template-columns:1fr}.pcard{padding:18px}}
+.hv{max-width:1100px;margin:22px auto 0}
+.hv video{width:100%;height:auto;display:block}
+.ht{display:none!important}
+@media (max-width:760px){.hw{display:none!important}.ht{display:block!important;max-width:420px;margin:0 auto}}
 /* responsive */
 @media (max-width:900px){.g4{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:760px){
@@ -131,23 +135,18 @@ footer p{margin:8px 0}
 <div class="hero wrap">
 <h1 class="reveal">Understand This Video For Me <span class="ai">AI Plugin</span></h1>
 <p class="tagline reveal">Let your AI actually watch your videos.</p>
-<p class="lead reveal">AI tools can't really watch videos. They grab a few screenshots and can't hear the audio. This is the AI plugin that watches and listens to videos for you: it pulls enough frames, transcribes every word with timestamps, and hands it all to Claude Desktop, Cursor or Grok Bot.</p>
+<p class="q reveal">&ldquo;What went wrong with the omelette she ordered?&rdquo;</p>
+<div class="hv reveal"><video class="hw" autoplay muted loop playsinline poster="hero-wide.jpg" width="1600" height="470" aria-label="Normal AI only sees a few screenshots and can't answer. With Understand This Video For Me, it gives the right answer with the timestamp."><source src="hero-wide.mp4" type="video/mp4"><source src="hero-wide.webm" type="video/webm"><img src="hero-wide.jpg" alt="Normal AI: can't answer. With Understand This Video For Me: right answer with timestamp."></video><video class="ht" autoplay muted loop playsinline poster="hero-tall.jpg" width="720" height="1060" aria-hidden="true"><source src="hero-tall.mp4" type="video/mp4"><source src="hero-tall.webm" type="video/webm"><img src="hero-tall.jpg" alt=""></video></div>
+<p class="lead reveal" style="margin-top:34px">AI tools can't really watch videos. They grab a few screenshots and can't hear the audio. This is the AI plugin that watches and listens to videos for you: it pulls enough frames, transcribes every word with timestamps, and hands it all to Claude Desktop, Cursor or Grok Bot.</p>
 <div class="cta reveal">
 <a class="btn" href="https://checkout.freemius.com/app/41518/plan/72061/licenses/3/" target="_blank" rel="noopener">Buy for $49, one-time</a>
 <a class="link" href="#how">See how it works</a>
 </div>
 <p class="small reveal">Lifetime licence · 14-day money-back guarantee</p>
-<div class="panel reveal"><video class="vid" autoplay muted loop playsinline preload="metadata" poster="demo-poster.jpg" width="960" height="600" aria-label="Screen recording: Claude can't answer a question about a video on its own, then answers it correctly with Understand This Video For Me"><source src="demo.webm" type="video/webm"><source src="demo.mp4" type="video/mp4"><picture><source media="(max-width:760px)" srcset="hero-mobile.svg"><img src="hero.svg" width="1200" height="600" alt="A video file becomes frames and a timestamped transcript, which your AI uses to answer questions"></picture></video><p class="credit">Test video: cooking tips by The Babbling Brooke (Brooke Marie Bridges), used under <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY</a>.</p></div>
+
 </div>
 
-<section id="proof" style="padding-top:70px"><div class="wrap">
-<div class="sec-head reveal"><h2>Same video. Same question.</h2><p class="q">&ldquo;What went wrong with the omelette she ordered?&rdquo;</p></div>
-<div class="grid g2">
-<div class="pcard reveal"><p class="who">Claude on its own</p><img src="proof-before.webp" width="1180" height="640" loading="lazy" alt="Claude: I can't answer the omelette question, because I didn't hear the audio and I haven't watched the whole video. I pulled 18 still frames, one every 10 seconds. I can't listen to audio or play video."><p class="verdict bad"><b>✕</b>Only 18 screenshots. No sound. Can't answer.</p></div>
-<div class="pcard reveal"><p class="who">With Understand This Video For Me</p><img src="proof-after.webp" width="1220" height="420" loading="lazy" alt="Claude with the plugin: The kitchen didn't sweat the zucchini before cooking it, so the omelette came out watery. Brooke tells this story around 0:37."><p class="verdict good"><b>✓</b>Watched and heard everything. Right answer, with the timestamp.</p></div>
-</div>
-<p class="credit reveal">Real answers from Claude Desktop, cropped to the key lines. Test video: cooking tips by The Babbling Brooke (Brooke Marie Bridges), used under <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY</a>.</p>
-</div></section>
+
 
 <section id="how"><div class="wrap">
 <div class="sec-head reveal"><h2>How it works.</h2><p class="lead">Three steps. Everything happens on your computer.</p></div>
@@ -162,8 +161,17 @@ footer p{margin:8px 0}
 <div class="ico"><svg width="130" height="72" viewBox="0 0 130 72" aria-hidden="true"><rect x="52" y="6" width="70" height="22" rx="11" fill="#1d1d1f"/><rect x="62" y="15" width="44" height="4" rx="2" fill="#fff"/><rect x="8" y="36" width="88" height="30" rx="12" fill="#f5f5f7"/><rect x="18" y="45" width="64" height="4" rx="2" fill="#86868b"/><rect x="18" y="54" width="44" height="4" rx="2" fill="#86868b"/></svg></div>
 <span class="n">3</span><h3>Your AI understands it</h3><p>Claude Desktop, Cursor or Grok Bot now actually understands the video, so it can explain, summarise and answer questions.</p></div>
 </div>
-<div class="panel reveal"><div class="anim"><img src="how.webp" width="720" height="450" loading="lazy" alt="Animation: a video file is dropped in, frames and a timestamped transcript appear, then the AI answers a question about the video"></div></div>
+<div class="panel reveal"><video class="vid" autoplay muted loop playsinline preload="none" poster="demo-poster.jpg" width="960" height="600" aria-label="Screen recording: Claude can't answer a question about a video on its own, then answers it correctly with Understand This Video For Me"><source src="demo.webm" type="video/webm"><source src="demo.mp4" type="video/mp4"><img src="how.webp" width="720" height="450" alt="A video is dropped in, frames and a transcript appear, then the AI answers"></video><p class="credit">Test video: cooking tips by The Babbling Brooke (Brooke Marie Bridges), used under <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY</a>.</p></div>
 <p class="note small reveal">Setup is quick: download, install the plugin and enter your licence key once.</p>
+</div></section>
+
+<section id="proof" style="padding-top:0"><div class="wrap">
+<div class="sec-head reveal"><h2>The real answers.</h2><p class="q">&ldquo;What went wrong with the omelette she ordered?&rdquo;</p></div>
+<div class="grid g2">
+<div class="pcard reveal"><p class="who">Claude on its own</p><img src="proof-before.webp" width="1180" height="640" loading="lazy" alt="Claude: I can't answer the omelette question, because I didn't hear the audio and I haven't watched the whole video. I pulled 18 still frames, one every 10 seconds. I can't listen to audio or play video."><p class="verdict bad"><b>✕</b>Only 18 screenshots. No sound. Can't answer.</p></div>
+<div class="pcard reveal"><p class="who">With Understand This Video For Me</p><img src="proof-after.webp" width="1220" height="420" loading="lazy" alt="Claude with the plugin: The kitchen didn't sweat the zucchini before cooking it, so the omelette came out watery. Brooke tells this story around 0:37."><p class="verdict good"><b>✓</b>Watched and heard everything. Right answer, with the timestamp.</p></div>
+</div>
+<p class="credit reveal">Real answers from Claude Desktop, cropped to the key lines. Test video: cooking tips by The Babbling Brooke (Brooke Marie Bridges), used under <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY</a>.</p>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
